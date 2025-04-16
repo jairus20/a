@@ -3,7 +3,7 @@ require_once '../src/config.php';
 
 // Verificar si se proporcionó un ID
 if (!isset($_GET['id'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 }
 
@@ -44,7 +44,7 @@ $sql = "SELECT * FROM contacto WHERE id=$id";
 $resultado = $conexion->query($sql);
 
 if ($resultado->num_rows === 0) {
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 }
 
@@ -129,7 +129,7 @@ $contacto = $resultado->fetch_assoc();
                     
                     <div class="text-center mt-3">
                         <button type="submit" class="btn btn-warning">Actualizar Contacto</button>
-                        <a href="index.php" class="btn btn-secondary">Cancelar</a>
+                        <a href="../index.php" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form>
             </div>

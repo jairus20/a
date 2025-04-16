@@ -1,6 +1,9 @@
 <?php
-require_once '../src/config.php';
+require_once '../src/config.php'; // Ruta relativa a config.php
+require_once '../src/templates/header.php'; // Ruta relativa al header
+?>
 
+<?php
 $mensaje = '';
 
 // Procesar el formulario cuando se envía
@@ -103,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     
                     <div class="text-center mt-3">
                         <button type="submit" class="btn btn-primary">Guardar Contacto</button>
-                        <a href="index.php" class="btn btn-secondary">Cancelar</a>
+                        <a href="../index.php" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form>
             </div>
@@ -112,3 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<?php
+require_once '../src/templates/footer.php'; // Ruta relativa al footer
+?>

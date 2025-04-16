@@ -67,9 +67,9 @@ $edad = $hoy->diff($fecha_nacimiento)->y;
                 </div>
                 
                 <div class="text-center mt-4">
-                    <a href="editar.php?id=<?php echo $contacto['id']; ?>" class="btn btn-warning">Editar</a>
-                    <a href="index.php?eliminar=<?php echo $contacto['id']; ?>" class="btn btn-danger" onclick="return confirm('¿Está seguro de eliminar este contacto?')">Eliminar</a>
-                    <a href="index.php" class="btn btn-secondary">Volver a la Lista</a>
+                    <a href="public/editar.php?id=<?php echo $contacto['id']; ?>" class="btn btn-warning">Editar</a>
+                    <a href="../index.php?eliminar=<?php echo $contacto['id']; ?>" class="btn btn-danger" onclick="return confirm('¿Está seguro de eliminar este contacto?')">Eliminar</a>
+                    <a href="../index.php" class="btn btn-secondary">Volver a la Lista</a>
                 </div>
             </div>
         </div>

@@ -1,17 +1,14 @@
 <?php
-$host = 'localhost';
-$usuario = 'root';  // Cambia esto según tu configuración de MySQL
-$contraseña = '';   // Cambia esto según tu configuración de MySQL
-$base_datos = 'agenda_contactos';
+$host = 'localhost'; // Dirección del servidor MySQL
+$dbname = 'agenda_contactos'; // Nombre de la base de datos
+$user = 'root'; // Usuario de MySQL
+$password = ''; // Contraseña de MySQL (vacía por defecto en XAMPP)
 
 // Crear conexión
-$conexion = new mysqli($host, $usuario, $contraseña, $base_datos);
+$conexion = new mysqli($host, $user, $password, $dbname);
 
 // Verificar conexión
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
-
-// Configurar codificación UTF-8
-$conexion->set_charset("utf8");
 ?>
