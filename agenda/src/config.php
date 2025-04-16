@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost'; // Dirección del servidor MySQL
-$dbname = 'agenda_contactos'; // Nombre de la base de datos
-$user = 'root'; // Usuario de MySQL
-$password = ''; // Contraseña de MySQL (vacía por defecto en XAMPP)
+$host = '192.168.56.106'; 
+$dbname = 'agenda_contactos';
+$user = 'usuario';
+$password = '123';
 
 // Crear conexión
 $conexion = new mysqli($host, $user, $password, $dbname);
