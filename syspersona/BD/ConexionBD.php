@@ -10,9 +10,9 @@ class ConexionBD {
     private $conexion;
     //Constructor
     public function __construct() {
-        $this->server="localhost";
-        $this->usuario="root";
-        $this->password="";
+        $this->server="192.168.56.106";
+        $this->usuario="usuario";
+        $this->password="123";
         $this->bd="bdpersona1";
     }
     //Conectar a la BD
