@@ -1,0 +1,50 @@
+$TTL 86400
+@       IN      SOA     ns1.jairoparedes.com. admin.jairoparedes.com. (
+                        2023050901      ; Serial
+                        3600            ; Refresh
+                        1800            ; Retry
+                        604800          ; Expire
+                        86400           ; Minimum TTL
+)
+
+; Servidores de nombres
+@       IN      NS      ns1.jairoparedes.com.
+
+; Registro A para el servidor de nombres
+ns1     IN      A       192.168.56.103
+
+; Registros A para el sitio web
+@       IN      A       192.168.56.102
+www     IN      A       192.168.56.102
+
+; Registros adicionales para otros servidores
+db      IN      A       192.168.56.101
+
+
+# Verificar la sintaxis del archivo named.conf
+sudo named-checkconf
+
+# Verificar la sintaxis del archivo de zona
+sudo named-checkzone jairoparedes.com /var/named/jairoparedes.com.zone
+
+sudo chown root:named /var/named/jairoparedes.com.zone
+sudo chmod 640 /var/named/jairoparedes.com.zone
+
+sudo systemctl start named
+sudo systemctl enable named
+sudo systemctl status named
+
+# Si hay un firewall activo, permitir tráfico DNS
+sudo firewall-cmd --permanent --add-service=dns
+sudo firewall-cmd --reload
+
+# Comprobar con dig
+dig @localhost jairoparedes.com
+dig @localhost www.jairoparedes.com
+
+# Comprobar con host
+host jairoparedes.com localhost
+host www.jairoparedes.com localhost
+
+# Editar el archivo resolv.conf temporalmente
+sudo nano /etc/resolv.conf
